@@ -1,0 +1,90 @@
+body {
+    background-color: lightgray;
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0px 2px 16px gray;
+}
+
+.add-book {
+    display: flex;
+    justify-content: center;
+}
+
+#book-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+
+    width: 15vw;
+    border-radius: 10px;
+}
+
+#modal {
+    border-radius: 10px;
+}
+
+#book-form input {
+    border-radius: 10px;
+    height: 2vh;
+    padding: 4px;
+}
+
+#form-buttons {
+    display: flex;
+    flex: 1;
+    gap: 10px;
+}
+
+#form-buttons button {
+    display: flex;
+    flex: 1;
+
+    align-items: center;
+    justify-content: center;
+}
+
+#book-form button {
+    border-radius: 15px;
+    height: 4vh;
+}
+
+#book-adder {
+    width: 40vw;
+    height: 5vh;
+    margin: 30px;
+
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.books {
+    display: grid;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    line-height: 0.5;
+    
+
+    margin: 20px;
+    padding: 30px;
+
+    width: 20vw;
+    height: 35vh;
+    border-radius: 20px;
+}
+
+.card button {
+    margin: 20px;
+    border-radius: 10px;
+    height: 100px
+}
