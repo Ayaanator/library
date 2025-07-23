@@ -39,11 +39,6 @@ function Book(title, author, pages, read, id) {
     this.id = id;
 }
 
-const book1 = new Book("The Lightning Thief", "Rick Riordan", 315);
-const book2 = new Book("The Alchemyst", "Paulo Cohelo", 24);
-myLibrary.push(book1);
-myLibrary.push(book2);
-
 function generateRandomId(prefix = "id") {
   return prefix + "_" + Math.random().toString(36).substr(2, 9);
 }
@@ -85,13 +80,33 @@ function addBookCard(book) {
 
     if(book.read == "yes") {
         read_button.textContent = "Read";
-        read_button.style.backgroundColor = "green";
+        read_button.style.backgroundColor = "lightgreen";
     } else {
         read_button.textContent = "Not Read";
-        read_button.style.backgroundColor = "red";
+        read_button.style.backgroundColor = "#f28b82";
     }
 
     const remove_button = document.createElement("button");
+    remove_button.textContent = "Remove";
+
+    read_button.addEventListener("click", () => {
+        if(read_button.textContent == "Read") {
+            read_button.textContent = "Not Read";
+            read_button.style.backgroundColor = "#f28b82";
+        } else {
+            read_button.textContent = "Read";
+            read_button.style.backgroundColor = "lightgreen";
+        }
+    })
+
+    remove_button.addEventListener("click", () => {
+        grid.removeChild(div);
+
+        const index = myLibrary.findIndex(b => b.id === book.id);
+        if (index !== -1) {
+            myLibrary.splice(index, 1);
+        }
+    })
 
     div.appendChild(title);
     div.appendChild(author);

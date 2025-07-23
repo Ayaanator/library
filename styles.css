@@ -64,8 +64,12 @@ body {
     border-radius: 20px;
 }
 
-.books {
+#books {
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15vw, 1fr));
+    grid-template-rows: repeat(3, 35vh);
+
+    gap: 40px;
 }
 
 .card {
@@ -74,13 +78,15 @@ body {
     background-color: white;
     line-height: 0.5;
     
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 20px;
 
-    margin: 20px;
-    padding: 30px;
-
-    width: 20vw;
+    width: 15vw;
     height: 35vh;
     border-radius: 20px;
+
 }
 
 .card button {
