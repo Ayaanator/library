@@ -20,7 +20,14 @@ book_form.addEventListener("submit", (event) => {
         return;
     }
 
-    addBookToLibrary();
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
+    const pages = document.getElementById("pages").value;
+    const read = document.getElementById("read").value;
+
+    let book = new Book(title, author, pages, read, generateRandomId("book"));
+
+    addBookToLibrary(book);
     book_form.reset();
     modal.close();
 });
@@ -43,14 +50,7 @@ function generateRandomId(prefix = "id") {
   return prefix + "_" + Math.random().toString(36).substr(2, 9);
 }
 
-function addBookToLibrary() {
-
-    const title = document.getElementById("title").value;
-    const author = document.getElementById("author").value;
-    const pages = document.getElementById("pages").value;
-    const read = document.getElementById("read").value;
-
-    let book = new Book(title, author, pages, read, generateRandomId("book"));
+function addBookToLibrary(book) {
     myLibrary.push(book);
     printBooks();
     addBookCard(book);
@@ -116,3 +116,10 @@ function addBookCard(book) {
 
     grid.appendChild(div);
 }
+
+const book1 = new Book("The Lightning Thief", "Rick Riordan", 315, "no");
+const book2 = new Book("The Alchemyst", "Paulo Cohelo", 394, "yes");
+const book3 = new Book("Kensuke's Kingdom", "Michael Morpurgo", 176, "no");
+addBookToLibrary(book1);
+addBookToLibrary(book2);
+addBookToLibrary(book3);
